@@ -12808,9 +12808,22 @@ var _hoisted_1$9 = createBaseVNode("br", null, null, -1), _hoisted_2$9 = createB
 function generate() {
     return {
         savedOpacity: Math.max(1 - (Date.now() - player.lastSaveTime) / 5e3, 0),
-        exportSaveData: function() {
-            navigator.clipboard.writeText(player.saveData), alert("Save data copied to clipboard!");
-        },
+        exportSaveData: /*#__PURE__*/ _asyncToGenerator(function() {
+            return __generator(this, function(_state) {
+                switch(_state.label){
+                    case 0:
+                        return [
+                            4,
+                            navigator.clipboard.writeText(player.saveData)
+                        ];
+                    case 1:
+                        _state.sent(), alert("Save data copied to clipboard!");
+                        return [
+                            2
+                        ];
+                }
+            });
+        }),
         importSaveData: function() {
             return player.saveData = prompt("Enter your save data:");
         },
